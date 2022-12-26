@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import { enhance, type SubmitFunction } from '$app/forms';
 	import { ItemsStore } from '../lib/store';
+
 	export let data: PageData;
 	const submitForm: SubmitFunction = ({ data: d, }) => {
     $ItemsStore.map(a=>{

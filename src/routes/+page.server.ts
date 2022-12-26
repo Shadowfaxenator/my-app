@@ -1,5 +1,5 @@
 import type { PageServerLoad , Actions} from './$types';
-
+import {env} from '$env/dynamic/private'
 type Note = {
     title: string
 }
@@ -11,7 +11,7 @@ let notes: Note[] =[
 
 export const load: PageServerLoad = (async ({context}) => {
 
-    let value = await context.env.KV.get("my");
+    let value = await env.KV.get("my");
     return {notes,
     kv: value};
 }) satisfies PageServerLoad;
