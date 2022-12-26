@@ -21,8 +21,8 @@ export const actions: Actions = {
 
     default: async ({request}) =>{
        const d= await request.formData()
-       console.log(d.getAll("title"))
-       
+      
+       await env.KV.put("my", d.get("title"))
 
     }
 }
