@@ -23,6 +23,7 @@
 				<li>
 					{note.title}
 				</li>
+        {data.kv}
 			{/each}
 		</ul>
 	</div>

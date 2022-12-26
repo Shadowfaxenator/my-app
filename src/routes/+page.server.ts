@@ -10,7 +10,10 @@ let notes: Note[] =[
 
 
 export const load: PageServerLoad = (async () => {
-    return {notes};
+
+    let value = await KV.get("to-do:123");
+    return {notes,
+    kv: value};
 }) satisfies PageServerLoad;
 
 
