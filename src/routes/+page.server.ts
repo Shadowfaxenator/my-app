@@ -9,9 +9,9 @@ let notes: Note[] =[
 ]
 
 
-export const load: PageServerLoad = (async () => {
+export const load: PageServerLoad = (async ({context}) => {
 
-    let value = await KV.get("to-do:123");
+    let value = await context.env.KV.get("my");
     return {notes,
     kv: value};
 }) satisfies PageServerLoad;
